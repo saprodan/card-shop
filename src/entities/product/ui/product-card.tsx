@@ -1,23 +1,20 @@
-import { useRouter } from 'next/navigation';
-import React, { FC, ReactNode } from 'react';
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React, { FC, ReactNode } from "react";
 
 export interface Product {
   id: number;
   title: string;
   price: number;
   description: string;
-  images: string[];
-  creationAt: string;
-  updatedAt: string;
-  category: Category;
+  category: string;
+  image: string;
+  rating: Rating;
 }
 
-export interface Category {
-  id: number;
-  name: string;
-  image: string;
-  creationAt: string;
-  updatedAt: string;
+export interface Rating {
+  rate: number;
+  count: number;
 }
 
 interface ProductCardProps {
@@ -51,27 +48,20 @@ export const ProductCard: FC<ProductCardProps> = ({
 
   return (
     <div
-      // href={'/product/20'}
       className="flex flex-col gap-2 min-w-[250px] relative cursor-pointer"
       onClick={(e) => handleClick(e)}
     >
-      <div className="text-center relative w-full h-[340px] verflow-hidden text-ellipsis whitespace-nowrap overflow-hidden rounded-xl">
-        <img
-          src={product.images[0]}
+      <div className="flex items-center justify-center w-full h-[340px] verflow-hidden overflow-hidden rounded-xl">
+        <Image
+          src={product.image}
           alt="product-photo"
-          className="object-cover w-full h-full"
+          width="150"
+          height="225"
+          priority
         />
-        {/* <Image
-          src={product.images[0]}
-          alt="product-photo"
-          className="object-cover w-full h"
-          width={100}
-          height={100}
-          // objectFit="cover"
-        /> */}
       </div>
       <p className="font-medium overflow-hidden text-ellipsis whitespace-nowrap">
-        {product.title}{' '}
+        {product.title}{" "}
       </p>
       {/* <p className="text-sm text-gray-400 h-20 overflow-hidden">
         {product.description && truncate(product.description, 150)}
@@ -90,5 +80,5 @@ export const ProductCard: FC<ProductCardProps> = ({
 };
 
 function truncate(str: string, n: number) {
-  return str.length > n ? str.slice(0, n - 1) + '...' : str;
+  return str.length > n ? str.slice(0, n - 1) + "..." : str;
 }

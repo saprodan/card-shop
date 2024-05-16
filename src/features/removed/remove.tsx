@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
-import { useActions } from '@/shared/lib/hooks/use-actions';
-import { DeleteIcon } from '@/shared/ui/icons/delete-icon';
+import { useActions } from "@/shared/lib/hooks/use-actions";
+import { DeleteIcon } from "@/shared/ui/icons/delete-icon";
 
 interface RemoveProps {
   itemId: number;
@@ -16,7 +16,7 @@ export const Remove: FC<RemoveProps> = ({ itemId }) => {
 
   return (
     <button onClick={onRemoveClick}>
-      <DeleteIcon className=" text-white transition-all hover:text-gray-800" />
+      <DeleteIcon className=" text-gray-300 transition-all hover:text-gray-500" />
     </button>
   );
 };

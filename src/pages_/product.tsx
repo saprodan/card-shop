@@ -1,16 +1,16 @@
-import { Header } from '@/features';
-import { FC } from 'react';
+import { Header } from "@/features";
+import { FC } from "react";
 // import { useRouter } from 'next/router';
-import { ProductInfo } from '@/widgets/product-info';
-import { Product } from '@/entities/product';
+import { ProductInfo } from "@/widgets/product-info";
+import { Product } from "@/entities/product";
 
 export async function generateParams() {
-  const products = await fetch(
-    'https://api.escuelajs.co/api/v1/products'
-  ).then((res) => res.json());
+  const products = await fetch("https://api.escuelajs.co/api/v1/products").then(
+    (res) => res.json()
+  );
 
   return products.map((product: Product) => ({
-    id: product.id,
+    id: product.id.toString(),
   }));
 }
 

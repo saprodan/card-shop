@@ -1,9 +1,9 @@
-import React, { FC, useState } from 'react';
-import { HeartIcon } from '@/shared/ui/icons/heart-icon';
-import { HeartOutlineIcon } from '@/shared/ui/icons/heart-outline-icon';
-import { useActions } from '@/shared/lib/hooks/use-actions';
-import { favoriteSlice } from './favorites-slice';
-import { useTypedSelector } from '@/shared/lib/hooks/use-selector';
+import React, { FC, useState } from "react";
+import { HeartIcon } from "@/shared/ui/icons/heart-icon";
+import { HeartOutlineIcon } from "@/shared/ui/icons/heart-outline-icon";
+import { useActions } from "@/shared/lib/hooks/use-actions";
+import { favoriteSlice } from "./favorites-slice";
+import { useTypedSelector } from "@/shared/lib/hooks/use-selector";
 
 interface FavoriteProps {
   itemId: number;
@@ -14,13 +14,11 @@ export const Favorite: FC<FavoriteProps> = ({ itemId }) => {
   const favorites = useTypedSelector((state) => state.favorites);
 
   const onLikeClick = () => {
-    console.log('fav click!');
+    console.log("fav click!");
 
     if (!favorites.includes(itemId)) {
-      console.log('нету добавить');
       addToFavorite(itemId);
     } else {
-      console.log('есть удалить');
       deleteFromFavorite(itemId);
     }
   };
@@ -30,7 +28,7 @@ export const Favorite: FC<FavoriteProps> = ({ itemId }) => {
       {favorites.includes(itemId) ? (
         <HeartIcon className=" text-red-500" />
       ) : (
-        <HeartOutlineIcon className="text-white transition-all hover:text-red-500" />
+        <HeartOutlineIcon className="text-gray-300 transition-all hover:text-red-500" />
       )}
     </button>
   );
