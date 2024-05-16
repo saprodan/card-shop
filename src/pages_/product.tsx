@@ -1,20 +1,23 @@
 import { Header } from '@/features';
-import StoreProvider from '@/app/store-provider';
-import { CardList } from '@/widgets/card-list';
 import { FC } from 'react';
 // import { useRouter } from 'next/router';
-import { useGetOneProductQuery } from '@/entities/product/api/product.api';
 import { ProductInfo } from '@/widgets/product-info';
+import { Product } from '@/entities/product';
+
+export async function generateParams() {
+  const products = await fetch(
+    'https://api.escuelajs.co/api/v1/products'
+  ).then((res) => res.json());
+
+  return products.map((product: Product) => ({
+    id: product.id,
+  }));
+}
 
 interface ProductPageProps {
   params: { id: string };
 }
 export const ProductPage: FC<ProductPageProps> = ({ params }) => {
-  // const router = useRouter();
-  // console.log(router);
-
-  // useGetOneProductQuery(params.id);
-
   return (
     <div>
       <Header />

@@ -67,7 +67,10 @@ export const ProductInfo: FC<ProductCardWidgetProps> = ({ id }) => {
           <div className="flex gap-2">
             {product.images?.map((src) => {
               return (
-                <div className="overflow-hidden max-w-[190px]">
+                <div
+                  className="overflow-hidden max-w-[190px]"
+                  key={src}
+                >
                   <img
                     src={src}
                     alt="product-photo"
