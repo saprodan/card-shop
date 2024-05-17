@@ -1,15 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const repo = 'card-shop'
-const assetPrefix = `/${repo}/`
-const basePath = `/${repo}`
+const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  // basePath: "/card-shop",
-  // assetPrefix: './',
+
   
-  assetPrefix: assetPrefix,
-  basePath: basePath,
+  basePath: isProd ? '/card-shop' : '',
   output: 'export',
   
   images: {
