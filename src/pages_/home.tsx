@@ -8,7 +8,7 @@ export const HomePage: FC = () => {
     <div>
       <Header />
       <main className="max-w-[1450px] mx-auto px-6 py-10">
-        <CardList />
+{/*         <CardList /> */}
       </main>
     </div>
   );
