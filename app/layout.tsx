@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import StoreProvider from '@/app/store-provider';
 
@@ -16,7 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StoreProvider>{children}</StoreProvider>
+        {/* <StoreProvider>{children}</StoreProvider> */}
+        {children}
       </body>
     </html>
   );

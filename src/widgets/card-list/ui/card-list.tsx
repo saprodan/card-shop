@@ -1,8 +1,8 @@
-"use client";
-import { UiSpinner } from "@/shared/ui/icons/ui-spinner";
-import { ProductCardWidget } from "@/widgets/product-card-widget";
-import { FC } from "react";
-import { useCardList } from "../model/use-card-list";
+'use client';
+import { UiSpinner } from '@/shared/ui/icons/ui-spinner';
+import { ProductCardWidget } from '@/widgets/product-card-widget';
+import { FC } from 'react';
+import { useCardList } from '../model/use-card-list';
 
 export const CardList: FC = () => {
   const {
@@ -40,7 +40,7 @@ export const CardList: FC = () => {
               });
             }}
           >
-            {showFavorites ? "Показать все" : "Показать избранное"}
+            {showFavorites ? 'Показать все' : 'Показать избранное'}
           </button>
           {removed.length > 0 && (
             <button

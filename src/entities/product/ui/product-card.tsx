@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { FC, ReactNode } from "react";
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React, { FC, ReactNode } from 'react';
 
 export interface Product {
   id: number;
@@ -61,7 +61,7 @@ export const ProductCard: FC<ProductCardProps> = ({
         />
       </div>
       <p className="font-medium overflow-hidden text-ellipsis whitespace-nowrap">
-        {product.title}{" "}
+        {product.title}{' '}
       </p>
       {/* <p className="text-sm text-gray-400 h-20 overflow-hidden">
         {product.description && truncate(product.description, 150)}
@@ -80,5 +80,5 @@ export const ProductCard: FC<ProductCardProps> = ({
 };
 
 function truncate(str: string, n: number) {
-  return str.length > n ? str.slice(0, n - 1) + "..." : str;
+  return str.length > n ? str.slice(0, n - 1) + '...' : str;
 }
