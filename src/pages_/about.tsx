@@ -6,7 +6,7 @@ export const AboutPage: FC = () => {
     <div>
       <Header />
       <div className="max-w-[1450px] px-6">
-        <p className="font-medium text-[38px] text-center my-10">
+        <p className="font-semibold text-[24px] text-center my-10">
           О нас
         </p>
         <p>

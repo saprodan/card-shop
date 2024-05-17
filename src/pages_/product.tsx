@@ -1,6 +1,5 @@
 import { Header } from '@/features';
 import { FC } from 'react';
-// import { useRouter } from 'next/router';
 import { ProductInfo } from '@/widgets/product-info';
 import { Product } from '@/entities/product';
 
@@ -23,7 +22,7 @@ export const ProductPage: FC<ProductPageProps> = ({ params }) => {
     <div>
       <Header />
       <main className="max-w-[1450px] mx-auto px-6 py-10 ">
-        {/* <ProductInfo id={params.id} /> */}
+        <ProductInfo id={params.id} />
       </main>
     </div>
   );

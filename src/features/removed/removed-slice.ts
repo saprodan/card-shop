@@ -21,8 +21,5 @@ export const removedSlice = createSlice({
   },
 });
 
-// export const { addToFavorite, deleteFromFavorite } =
-//   favoriteSlice.actions;
-
 export const removedReducer = removedSlice.reducer;
 export const removedActions = removedSlice.actions;

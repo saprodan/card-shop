@@ -48,7 +48,7 @@ export const ProductCard: FC<ProductCardProps> = ({
 
   return (
     <div
-      className="flex flex-col gap-2 min-w-[250px] relative cursor-pointer"
+      className="flex flex-col gap-2 min-w-[250px] relative cursor-pointer border rounded-xl p-3"
       onClick={(e) => handleClick(e)}
     >
       <div className="flex items-center justify-center w-full h-[340px] verflow-hidden overflow-hidden rounded-xl">
@@ -60,15 +60,16 @@ export const ProductCard: FC<ProductCardProps> = ({
           priority
         />
       </div>
+      <div className="font-medium text-cyan-500 text-lg">
+        <span>{product.price + ' $'}</span>
+      </div>
       <p className="font-medium overflow-hidden text-ellipsis whitespace-nowrap">
         {product.title}{' '}
       </p>
-      {/* <p className="text-sm text-gray-400 h-20 overflow-hidden">
-        {product.description && truncate(product.description, 150)}
-      </p> */}
       <p className="text-sm text-gray-400 overflow-hidden text-ellipsis whitespace-nowrap">
         {product.description}
       </p>
+
       <div className="absolute z-10 right-2 top-2" ref={likeRef}>
         {like}
       </div>

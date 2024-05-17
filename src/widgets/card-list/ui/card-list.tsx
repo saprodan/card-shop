@@ -3,6 +3,19 @@ import { UiSpinner } from '@/shared/ui/icons/ui-spinner';
 import { ProductCardWidget } from '@/widgets/product-card-widget';
 import { FC } from 'react';
 import { useCardList } from '../model/use-card-list';
+import { Product } from '@/entities/product';
+
+// const products: Product[] = [
+//   {
+//     title: 'Name',
+//     category: 'electronic',
+//     id: 1,
+//     description: 'rntuign wv;rev;esrhn 8ypn werugnv',
+//     price: 53,
+//     rating: { count: 5, rate: 5 },
+//     image: "rtrthr"
+//   },
+// ];
 
 export const CardList: FC = () => {
   const {
