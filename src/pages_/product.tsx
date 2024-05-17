@@ -5,13 +5,14 @@ import { ProductInfo } from "@/widgets/product-info";
 import { Product } from "@/entities/product";
 
 export async function generateParams() {
-  const products = await fetch("https://api.escuelajs.co/api/v1/products").then(
+  const products = await fetch("https://fakestoreapi.com/products").then(
     (res) => res.json()
   );
-
-  return products.map((product: Product) => ({
+  const params = products.map((product: Product) => ({
     id: product.id.toString(),
   }));
+
+  return params;
 }
 
 interface ProductPageProps {

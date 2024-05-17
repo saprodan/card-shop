@@ -31,7 +31,7 @@ export const ProductInfo: FC<ProductCardWidgetProps> = ({ id }) => {
     return (
       <div className="flex flex-col gap-4 ">
         <div className="flex justify-start mb-2">
-          <Link href="\" className="flex gap-2 items-center">
+          <Link href="/" className="flex gap-2 items-center">
             <ArrowLeftIcon className="w-5 text-gray-700" />
             <p className="leading-none text-gray-700">Назад</p>
           </Link>
