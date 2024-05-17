@@ -3,7 +3,7 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  // basePath: isProd ? '/card-shop' : '',
+  basePath: isProd ? '/card-shop' : '',
   output: 'export',
 
   images: {
